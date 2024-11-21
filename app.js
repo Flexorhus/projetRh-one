@@ -7,6 +7,7 @@ const session = require("express-session")
 
 const app = express()
 // appeller avant le middleware userRouter
+require("dotenv").config()
 app.use(express.static("./public"))
 app.use(session({
     secret: "PrisonBreakDance.",
@@ -30,6 +31,6 @@ app.use(entrepriseRouter)
 app.use(ordinateurRouter)
 app.use(employeRouter)
 
-app.listen(3004, () => {
-    console.log("Connecté sur le port 3004");
+app.listen(process.env.PORT, () => {
+    console.log("Connecté sur le port 3002");
 })  
