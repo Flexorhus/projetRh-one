@@ -1,0 +1,46 @@
+{% extends "../layouts/base.twig" %}
+
+{% block title %}
+	<title>{{title}}</title>
+{% endblock %}
+{% block style%}
+<link rel="stylesheet" href="/css/main.css">
+{% endblock%}
+
+{% block main %}
+	<main>
+		<section>
+			<div id="registerMain">
+				<form action="/register" id="register" method="POST">
+					<div class="inputCss">
+						<h2>Page d'inscription</h2>
+					</div>
+					<div class="inputCss">
+						<label for="siret">Numéro de SIRET</label><br>
+						<input type="text" id="siret" name="siret" required>
+					</div>
+					<div class="inputCss">
+						<label for="raisonSociale">Nom/Raison sociale</label><br>
+						<input type="text" id="raisonSociale" name="raisonSociale" required>
+					</div>
+					<div class="inputCss">
+						<label for="email">Email</label>
+						<br>
+						<input type="email" id="email" name="email" required>
+					</div>
+					<div class="inputCss">
+						<label for="password">Mot de passe</label><br>
+						<input type="password" id="password" name="password" required>
+					</div>
+					<div class="inputCss">
+						<label for="confirmPassword">Confirmer votre mot de passe</label><br>
+						<input type="password" name="confirmPassword" id="confirmPassword">
+					</div>
+					<div class="inputCss">
+						<button class="btn" type="submit">S'inscrire</button>
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+{% endblock %}

@@ -1,0 +1,8 @@
+model Ordinateur {
+    id           Int        @id @default(autoincrement())
+    name         String     @db.VarChar(255)
+    employe      Employe?   @relation(fields: [employeId], references: [id])
+    employeId    Int?       @unique
+    entreprise   Entreprise @relation(fields: [entrepriseId], references: [id])
+    entrepriseId Int
+}

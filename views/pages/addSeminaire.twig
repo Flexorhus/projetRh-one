@@ -1,0 +1,52 @@
+{% extends "../layouts/base.twig" %}
+
+{% block style%}
+<link rel="stylesheet" href="/css/main.css">
+{% endblock%}
+{% block title %}
+	<title>Ajouter un seminaire</title>
+{% endblock %}
+
+{% block main %}
+	<main>
+		<section>
+			<div id="addSeminaire">
+				{% if entreprise %}
+					<h2>Modifier
+						{{entreprise}}
+					</h2>
+				{% else %}
+					<h2>Ajouter une tache
+					</h2>
+				{% endif %}
+				<div>
+					<form {% if entreprise %} action="/updateSeminaire/{{entreprise.id}}" {% else %} action="/addSeminaire" {% endif %} method="post">
+						<div class="inputCss">
+							<label for="name">Nom du séminaire</label><br>
+							<input type="text" name="name" id="name" value={{entreprise.name}}>
+						</div>
+						<div class="inputCss">
+							<label for="description">Description du séminaire</label><br>
+							<input type="text" name="description" id="description" value={{entreprise.description}}>
+						</div>
+						<div class="inputCss">
+							<label for="debutSeminaire">Début du séminaire</label><br>
+							<input type="date" name="debutSeminaire" id="debutSeminaire" value={{entreprise.debutSeminaire}}>
+						</div>
+						<div class="inputCss">
+							<label for="finSeminaire">Fin du séminaire</label><br>
+							<input type="date" name="finSeminaire" id="finSeminaire" value={{entreprise.finSeminaire}}>
+						</div>
+						<button class="btn">
+							{% if employe %}
+								Modifier la tache
+							{% else %}
+								Créer la tache
+							{% endif %}
+						</button>
+					</form>
+				</div>
+			</div>
+		</section>
+	</main>
+{% endblock %}

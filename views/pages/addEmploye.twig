@@ -1,0 +1,67 @@
+{% extends "../layouts/base.twig" %}
+
+{% block style%}
+<link rel="stylesheet" href="/css/main.css">
+{% endblock%}
+
+{% block title %}
+	<title>Ajouter un employe</title>
+{% endblock %}
+
+{% block main %}
+	<main>
+		<section>
+			<div id="addEmpl">
+				{% if entreprise %}
+					<h2>Modifier
+						{{employe.id}}
+					</h2>
+				{% else %}
+					<h2>Ajouter un employé
+					</h2>
+				{% endif %}
+				<div>
+					<form {% if employe %} action="/updateEmploye/{{employe.id}}" {% else %} action="/addEmploye" {% endif %} method="post">
+						<div class="inputCss">
+							<label for="lastName">Votre nom</label><br>
+							<input type="text" name="lastName" id="lastName" value={{employe.lastName}}>
+						</div>
+						<div class="inputCss">
+							<label for="firstName">Votre prénom</label><br>
+							<input type="text" name="firstName" id="firstName" value={{employe.firstName}}>
+						</div>
+						<div class="inputCss">
+							<label for="email">Votre email</label><br>
+							<input type="text" name="email" id="email" value={{employe.email}}>
+						</div>
+						<div class="inputCss">
+							<label for="age">Votre âge</label><br>
+							<input type="number" name="age" id="age" value={{employe.age}}>
+						</div>
+						<div class="inputCss">
+							<label for="password">Votre mot de passe</label><br>
+							<input type="password" name="password" id="password" value={{employe.password}}>
+						</div>
+						<div>
+							<label for="civilite">Votre civilité :</label><br>
+							<select id="civilite" name="civilite">
+								<option value="MR">Monsieur</option>
+								<option value="MME">Madame</option>
+								<option value="NON_GENRE">Non genré</option>
+							</select><br>
+						</div>
+						<button class="btn">
+							{% if employe %}
+								Modifier l'employé
+
+							{% else %}
+								Créer l'employé
+							{% endif %}
+						</button>
+					</form>
+				</div>
+
+			</div>
+		</section>
+	</main>
+{% endblock %}

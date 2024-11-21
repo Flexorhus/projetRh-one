@@ -1,0 +1,51 @@
+{% extends "../layouts/base.twig" %}
+{% block style%}
+<link rel="stylesheet" href="/css/main.css">
+{% endblock%}
+{% block title %}
+	<title>Ajouter un ordinateur</title>
+{% endblock %}
+{% block main %}
+	<main>
+		<section>
+			<div id="addOrdinateur">
+				{% if ordinateur %}
+					<h2>Modifier
+						{{ordinateur.name}}
+					</h2>
+				{% else %}
+					<h2>Ajouter d'un PC</h2>
+				{% endif %}
+				<form {% if ordinateur %} action="/updatePc/{{ordinateur.id}}" {% else %} action="/addPc" {% endif %} method="post">
+					<div class="inputCss">
+						<label for="name">Nom du PC</label><br>
+						<input type="text" name="name" id="name" value="{{ ordinateur ? ordinateur.name : '' }}">
+					</div>
+					<div>
+						<label for="employe">Sélectionner un employé</label>
+						<select name="employeId" id="employe">
+							{% if employesSansOrdinateur|length == 0 %}
+								<option value="">Vous n'avez plus d'employé disponible</option>
+							{% else %}
+								<option value="">Liste des employés disponible</option>
+								{% for employe in employesSansOrdinateur %}
+									<option value="{{ employe.id }}" {% if ordinateur and employe.id == ordinateur.employeId %} selected {% endif %}>
+										{{ employe.lastName }}
+										{{ employe.firstName }}
+									</option>
+								{% endfor %}
+							{% endif %}
+						</select>
+					</div>
+					<button class="btn">
+						{% if ordinateur %}
+							Modifier le PC
+						{% else %}
+							Créer le PC
+						{% endif %}
+					</button>
+				</form>
+			</div>
+		</section>
+	</main>
+{% endblock %}

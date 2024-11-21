@@ -1,0 +1,40 @@
+{% extends "../layouts/base.twig" %}
+
+{% block title %}
+	<title>Login</title>
+{% endblock %}
+{% block style%}
+<link rel="stylesheet" href="/css/main.css">
+{% endblock%}
+
+{% block main %}
+	<main>
+		<section>
+			<div id="loginMain">
+				<form action="/login" id="login" method="post">
+					<div class="inputCss">
+						<h2>Connexion Entreprise</h2>
+					</div>
+					<div class="inputCss">
+						<label for="email">Email</label><br>
+						<input type="email" id="email" name="email" required>
+						{% if error %}
+							{{error.email}}
+						{% endif %}
+					</div>
+					<div class="inputCss">
+						<label for="password">Mot de passe</label><br>
+						<input type="password" id="password" name="password" required>
+						{% if error %}
+							{{error.password}}
+						{% endif %}
+					</div>
+					<div>
+						<button class="btn">Se connecter</button>
+					</div>
+				</form>
+			</div>
+		</section>
+
+	</main>
+{% endblock %}

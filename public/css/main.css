@@ -1,0 +1,194 @@
+html{
+    color: rgb(32, 90, 73);
+    height: 95%;
+    background: rgb(41,185,142);
+    background: linear-gradient(14deg, rgba(41,185,142,1) 25%, rgba(231,226,195,1) 75%);
+}
+
+.navItem , a {
+    text-decoration: none;
+    color: rgb(32, 90, 73);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navItem {
+    position: relative;
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    font-size: 16px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    box-shadow: 0 0 0 2px #ffffff20;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+
+.navItem:hover {
+    box-shadow: 0 0 0 5px #2195f360;
+    background-color: #2195f360;
+    color: #ffffff;
+    /* back ground */
+}
+
+.navItem:active {
+    scale: 0.95;
+    background-color:#2195f360 ;
+}
+
+#register , #login, #addOrdinateur, #addEmpl {
+    margin: auto;
+    padding: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 300px;
+    background: rgba(255,255,255,0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 19px;
+}
+
+h2 {
+    margin: 15px;
+}
+.btn {
+    color: rgb(41, 144, 113);
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid rgb(41, 144, 113);
+    padding: 10px 20px;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: bold;
+    background: transparent;
+    position: relative;
+    transition: all 1s;
+    overflow: hidden;
+}
+
+.btn:hover {
+    color: white;
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    top: 0;
+    left: -40px;
+    transform: skewX(45deg);
+    background-color: rgb(41, 144, 113);
+    z-index: -1;
+    transition: all 1s;
+}
+.btn:hover::before {
+    width: 160%;
+}
+
+select {
+    text-align: center;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    width: 20rem;
+    padding: 10px;
+    background: no-repeat right 0.8em center / 1.4em;
+    color:rgb(41, 144, 113);
+    border-radius: 1em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    
+    /* Remove focus outline */
+    
+    option {
+        color: black;
+        
+    }
+}
+
+#mainContainer {
+    display: flex;
+    justify-content: center;
+}
+#container1{
+    width: 80%;
+    display: flex;
+}
+#container1 , #container2, #container3 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+}
+.ordinateur {
+    height: 20%;
+}
+.ordinateur, .employe {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background: rgba(195, 208, 149, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    margin: 10px;
+    padding: 20px;
+}
+
+/* a {
+    border: 1px solid black;
+    border-radius: 25px;
+} */
+
+
+/* Fichier Map.twig */
+#itineraire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    padding: 10px;
+}
+#map {
+    height: 500px;
+    width: 100%;
+}
+div.inputCss{
+    margin: 10px;
+}
+
+.inputCss input {
+    background-color: #eee;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 13em;
+    border-radius: 1rem;
+    color: rgb(41, 144, 113);
+    box-shadow: 0 0.4rem #dfd9d9;
+    cursor: pointer;
+
+}
+
+.inputCss input:focus {
+    outline-color: rgb(41, 144, 113);
+}

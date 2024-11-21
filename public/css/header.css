@@ -1,0 +1,28 @@
+header img {
+    width: 200px;
+    height: 200px;
+
+}
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    
+}
+
+nav ul{
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    text-decoration-style: none;
+    font-size: 20px;
+}
+

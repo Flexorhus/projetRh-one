@@ -1,0 +1,23 @@
+{
+  "name": "projet",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AnisZnina",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^5.20.0",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "fullcalendar": "^6.1.15",
+    "leaflet": "^1.9.4",
+    "node-pre-gyp": "^0.17.0",
+    "nodemailer": "^6.9.15",
+    "nodemon": "^3.1.7",
+    "twig": "^1.17.1"
+  }
+}

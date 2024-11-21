@@ -1,0 +1,50 @@
+{% extends "../layouts/base.twig" %}
+
+{% block style%}
+<link rel="stylesheet" href="/css/main.css">
+{% endblock%}
+
+{% block main %}
+	<main>
+		<section id="mainContainer">
+			<section id="container1">
+				<div>
+					<h2>Ordinateurs</h2>
+				</div>
+				{% for ordinateur in ordinateurs %}
+					<div class="ordinateur">
+						<h4>Le PC
+							{{ ordinateur.name }}</h4>
+						{% if ordinateur.employe %}
+							est attribué à l'employé :
+							{{ ordinateur.employe.firstName }}
+							{{ ordinateur.employe.lastName }}
+						{% else %}
+							n'est pas encore attribué à un employé
+						{% endif %}
+						<a href="/updatePc/{{ordinateur.id}}">Modifier</a>
+						<a href="/deletePc/{{ordinateur.id}}">Supprimer</a>
+					</div>
+				{% endfor %}
+			</section>
+			<section id="container2">
+				<h2>Employés</h2>
+				<div>
+					{% for employe in employes %}
+						<div class="employe">
+							{{ employe.lastName }}
+							{{ employe.firstName }}
+							<a href="/updateEmploye/{{employe.id}}">Modifier</a>
+							<a href="/deleteEmploye/{{employe.id}}">Supprimer</a>
+						</div>
+					{% endfor %}
+				</div>
+			</section>
+		</section>
+		<section id="container3">
+			<h2>Événements à venir</h2>
+			<div></div>
+
+		</section>
+	</main>
+{% endblock %}

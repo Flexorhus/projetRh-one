@@ -1,0 +1,18 @@
+model Employe {
+    id           Int         @id @default(autoincrement())
+    lastName     String      @db.VarChar(255)
+    firstName    String      @db.VarChar(255)
+    email        String      @unique
+    password     String      @db.VarChar(255)
+    age          Int
+    civilite     Civilite
+    ordinateur   Ordinateur?
+    entreprise   Entreprise  @relation(fields: [entrepriseId], references: [id])
+    entrepriseId Int
+}
+
+enum Civilite {
+    MR
+    MME
+    NON_GENRE
+}

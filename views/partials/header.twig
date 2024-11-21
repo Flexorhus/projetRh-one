@@ -1,0 +1,48 @@
+{% block style%}
+<link rel="stylesheet" href="/css/header.css">
+{% endblock%}
+<header>
+	<div>
+		<img src="/assets/img/logorh.png" alt="logo">
+	</div>
+	<nav class="navItem">
+		<ul>
+			{% if entreprise  %}
+				<li>
+					<a href="/">Accueil</a>
+				</li>
+				<li>
+					<a href="/addPc">Ajout d'un ordinateur</a>
+				</li>
+				<li>
+					<a href="/addEmploye">Ajout d'un employé</a>
+				</li>
+				<li>
+					<a href="/logout">Déconnexion</a>
+				</li>
+			{% else %}
+				{% if employe %}
+					<li>
+						<a href="/">Accueil</a>
+					</li>
+					<li>
+						<a href="/addTache">Ajout d'une tache</a>
+					</li>
+					<li>
+						<a href="/logout">Déconnexion</a>
+					</li>
+				{% else %}
+					<li>
+						<a href="/register">INSCRIPTION</a>
+					</li>
+					<li>
+						<a href="/login">CONNEXION Entreprise</a>
+					</li>
+					<li>
+						<a href="/loginEmploye">CONNEXION Employe</a>
+					</li>
+				{% endif %}
+			{% endif %}
+		</ul>
+	</nav>
+</header>
